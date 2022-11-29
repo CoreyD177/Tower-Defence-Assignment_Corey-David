@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Node
+  - Tower
+  - Wall
+  - Mob
+  - OrigTowers
+  - Fiend
+  - BreakWalls
+  - Torso
+  - Arms
+  - Legs
+  - Head
+  - FiendStart
   layers:
   - Default
   - TransparentFX
@@ -12,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Mobs
   - 
   - 
   - 
