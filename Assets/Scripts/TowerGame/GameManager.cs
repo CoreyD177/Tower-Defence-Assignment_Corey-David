@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
     private GameObject _endPanel;
     //Victory Text element so we can display end message
     [HideInInspector] public Text victoryText;
+    //String and int to determine what part of mob was hit last
+    [HideInInspector] public string fiendHit = "none";
+    [HideInInspector] public int fiendPoints;
     #endregion
     #region Setup & Update
     void Awake()
@@ -271,7 +274,7 @@ public class GameManager : MonoBehaviour
         //Show hud elements during ingame and pause game states
         if (gameState == GameState.InGame || gameState == GameState.Paused)
         {
-            GUI.TextField(new Rect(0f, 0f, Screen.width, Screen.height / 27), gameState.ToString());
+            GUI.TextField(new Rect(0f, 0f, Screen.width, Screen.height / 27), gameState.ToString() + " - Last mob hit was: " + fiendHit + " for " + fiendPoints + " points.");
             GUI.TextField(new Rect(0f, (Screen.height/27) * 26, Screen.width/9, Screen.height/27), "Tower Health: " + health);
             GUI.TextField(new Rect(Screen.width/9, (Screen.height / 27) * 26, Screen.width / 9, Screen.height / 27), "Points: " + points);
             GUI.TextField(new Rect((Screen.width / 9) * 2, (Screen.height / 27) * 26, (Screen.width / 9) * 4, Screen.height / 27), "Shark Attack III: The Last Stand");
